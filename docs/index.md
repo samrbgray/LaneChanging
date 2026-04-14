@@ -4,3 +4,5 @@ This project provides a dataset and analysis of an Autonomous Vehicle (AV) lane 
 - [Dataset](data.md)
 - [Methods](methods.md)
 - [Results](results.md)
+- [Publications](publications.md)
+- [Team](team.md)
