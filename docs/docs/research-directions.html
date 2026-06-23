@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research Directions · NC-tALC</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">NC-tALC</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="experimental-setup.html">Setup</a></li>
+      <li><a href="dataset.html">Dataset</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="research-directions.html">Research</a></li>
+      <li><a href="code.html">Code</a></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero" style="padding:5rem 0 3rem;">
+  <div class="container">
+    <p class="hero-eyebrow">Open Problems</p>
+    <h1>Research Directions</h1>
+    <p class="hero-sub">
+      Questions the NC-tALC dataset is positioned to help answer. We welcome collaboration —
+      reach out at <a href="mailto:asharm63@ncsu.edu">asharm63@ncsu.edu</a>.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div style="display:grid;gap:2rem;">
+
+      <div class="card">
+        <div class="rd-num">01</div>
+        <h3>Behavioral Comparison: FSD vs. ACC vs. Human</h3>
+        <br>
+        <p>
+          Quantify differences in gap acceptance thresholds, lateral trajectory profiles,
+          lane-change duration, and jerk between tAV modes and human-driven baselines.
+          The dataset's controlled experimental design — holding DS and DV constant across
+          modes — is particularly well-suited to isolating driving mode effects.
+        </p>
+        <br>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+          <span class="tag">Gap Acceptance</span>
+          <span class="tag">Trajectory Analysis</span>
+          <span class="tag">Behavioral Modeling</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="rd-num">02</div>
+        <h3>Lane-Changing Model Development</h3>
+        <br>
+        <p>
+          Calibrate or extend established lane-change models (Wiedemann, MOBIL, IDM-LC) using
+          empirical tAV parameters from this dataset. tAVs may exhibit fundamentally different
+          gap acceptance utility functions and lateral acceleration profiles that require new
+          model formulations rather than simple re-calibration.
+        </p>
+        <br>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+          <span class="tag">MOBIL</span>
+          <span class="tag">IDM</span>
+          <span class="tag">Model Calibration</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="rd-num">03</div>
+        <h3>Surrogate Safety Measures During LC Events</h3>
+        <br>
+        <p>
+          Compute time-to-collision (TTC), deceleration to avoid crash (DRAC), and
+          post-encroachment time (PET) at the moment of lane-change initiation and completion
+          across gap difficulty levels. The range of DS conditions in the dataset — from
+          easy to safety-critical gaps — provides a rich basis for safety curve estimation.
+        </p>
+        <br>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+          <span class="tag">TTC</span>
+          <span class="tag">DRAC</span>
+          <span class="tag">Safety Analysis</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="rd-num">04</div>
+        <h3>Cooperative Responding Behavior</h3>
+        <br>
+        <p>
+          Analyze how FSD and ACC vehicles respond when a vehicle cuts in — comparing
+          deceleration onset, magnitude, headway recovery time, and string stability
+          across Hurry/Chill configurations and gap sizes. The Responding experiment's
+          HH/HC/CH/CC matrix isolates driving style effects on platoon-level disturbance
+          propagation.
+        </p>
+        <br>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+          <span class="tag">String Stability</span>
+          <span class="tag">Headway Recovery</span>
+          <span class="tag">Cooperative Driving</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="rd-num">05</div>
+        <h3>Energy Implications of Lane-Change Aggressiveness</h3>
+        <br>
+        <p>
+          Link the energy consumption CAN data to trajectory-derived aggressiveness metrics
+          (peak lateral acceleration, jerk, speed variation) to quantify how tAV lane-change
+          behavior affects EV range. This is especially tractable in the Responding experiment,
+          where deceleration events can be directly attributed to the cut-in maneuver.
+        </p>
+        <br>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+          <span class="tag">EV Energy</span>
+          <span class="tag">CAN Bus</span>
+          <span class="tag">Eco-Driving</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="rd-num">06</div>
+        <h3>Mixed-Traffic Flow Simulation</h3>
+        <br>
+        <p>
+          Use empirically-derived tAV behavioral parameters from this dataset to parameterize
+          microscopic simulation models (SUMO, VISSIM) and study macroscopic traffic flow
+          impacts at varying tAV market penetration rates. How do tAV lane changes affect
+          capacity and throughput on a Major Collector at 10%, 30%, or 50% market share?
+        </p>
+        <br>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+          <span class="tag">SUMO</span>
+          <span class="tag">Mixed Traffic</span>
+          <span class="tag">Market Penetration</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="card" style="text-align:center;padding:3rem 2rem;">
+      <h3 style="margin-bottom:.75rem;">Interested in Collaborating?</h3>
+      <p style="max-width:50ch;margin:0 auto 1.5rem;">
+        We welcome research partnerships using this dataset. Reach out to the team
+        with your research question or proposal.
+      </p>
+      <a class="btn btn-primary" href="mailto:asharm63@ncsu.edu?subject=NC-tALC Research Collaboration">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">NC-tALC Dataset · <a href="https://sites.google.com/site/danjuechen/" target="_blank">SHINE Lab, NCSU</a> · <a href="mailto:asharm63@ncsu.edu">asharm63@ncsu.edu</a></div>
+    <div class="footer-links">
+      <a href="https://github.com/samrbgray/LaneChanging" target="_blank">GitHub</a>
+      <a href="publications.html">Cite</a>
+      <a href="team.html">Team</a>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

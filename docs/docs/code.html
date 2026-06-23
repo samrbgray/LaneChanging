@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code · NC-tALC</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">NC-tALC</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="experimental-setup.html">Setup</a></li>
+      <li><a href="dataset.html">Dataset</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="research-directions.html">Research</a></li>
+      <li><a href="code.html">Code</a></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero" style="padding:5rem 0 3rem;">
+  <div class="container">
+    <p class="hero-eyebrow">Open Source</p>
+    <h1>Code</h1>
+    <p class="hero-sub">
+      Analysis and visualization scripts for working with the NC-tALC dataset.
+      All code is available in the <a href="https://github.com/samrbgray/LaneChanging" target="_blank">GitHub repository</a>.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div style="display:grid;gap:2.5rem;">
+
+      <!-- Animations -->
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.25rem;flex-wrap:wrap;gap:.75rem;">
+          <div>
+            <h3>Trajectory Animations</h3>
+            <p style="font-size:.82rem;color:var(--muted);font-family:var(--font-mono);margin-top:.25rem;">Code/animations/</p>
+          </div>
+          <a class="btn btn-outline" href="https://github.com/samrbgray/LaneChanging/tree/main/Code/animations" target="_blank">View on GitHub →</a>
+        </div>
+        <p style="font-size:.95rem;margin-bottom:1.5rem;">
+          Generates bird's-eye-view trajectory animations from the processed positional XLSX files.
+          Each frame renders vehicle positions, lane markings, and relative distances for all four
+          vehicles simultaneously, producing an MP4 or GIF of the full lane-change event.
+        </p>
+        <h4>Usage</h4>
+        <br>
+        <div class="code-block">
+<span class="cmt"># Install dependencies</span><br>
+pip install pandas openpyxl matplotlib ffmpeg-python<br>
+<br>
+<span class="cmt"># Run animation for a single trial</span><br>
+python <span class="str">animate_trial.py</span> --input <span class="str">Data/Sample/FSD/LC/S78_DS2_DV0.xlsx</span> --output <span class="str">Output/LC/Video/</span><br>
+<br>
+<span class="cmt"># Batch process all trials in a folder</span><br>
+python <span class="str">animate_batch.py</span> --input_dir <span class="str">Data/Sample/FSD/LC/</span> --output_dir <span class="str">Output/LC/Video/</span>
+        </div>
+        <div class="callout" style="margin-top:1.25rem;">
+          <p style="font-size:.85rem;">Input: any NC-tALC positional XLSX file. Output: MP4 animation saved to the specified output directory.</p>
+        </div>
+      </div>
+
+      <!-- Measure Plots -->
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.25rem;flex-wrap:wrap;gap:.75rem;">
+          <div>
+            <h3>Measure Plots</h3>
+            <p style="font-size:.82rem;color:var(--muted);font-family:var(--font-mono);margin-top:.25rem;">Code/measure_plots/</p>
+          </div>
+          <a class="btn btn-outline" href="https://github.com/samrbgray/LaneChanging/tree/main/Code/measure_plots" target="_blank">View on GitHub →</a>
+        </div>
+        <p style="font-size:.95rem;margin-bottom:1.5rem;">
+          Produces standard analysis figures from the positional data — including speed profiles,
+          lateral distance time series, longitudinal gap evolution, and surrogate safety measure
+          plots. Designed to work directly with the NC-tALC XLSX schema.
+        </p>
+        <h4>Usage</h4>
+        <br>
+        <div class="code-block">
+<span class="cmt"># Install dependencies</span><br>
+pip install pandas openpyxl matplotlib seaborn scipy<br>
+<br>
+<span class="cmt"># Generate all plots for a trial</span><br>
+python <span class="str">plot_measures.py</span> --input <span class="str">Data/Sample/FSD/LC/S78_DS2_DV0.xlsx</span><br>
+<br>
+<span class="cmt"># Compare FSD vs ACC across multiple trials</span><br>
+python <span class="str">compare_modes.py</span> --fsd_dir <span class="str">Data/Sample/FSD/LC/</span> --acc_dir <span class="str">Data/Sample/ACC/LC/</span>
+        </div>
+        <div class="callout" style="margin-top:1.25rem;">
+          <p style="font-size:.85rem;">Outputs PNG figures to a local <code>figures/</code> directory by default. Pass <code>--output_dir</code> to specify a custom path.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Dependencies -->
+<section>
+  <div class="container">
+    <div class="section-intro">
+      <p class="section-label">Environment</p>
+      <h2>Dependencies</h2>
+    </div>
+    <div class="table-wrap card">
+      <table>
+        <thead><tr><th>Package</th><th>Version</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Python</td><td>≥ 3.9</td><td>Runtime</td></tr>
+          <tr><td>pandas</td><td>≥ 1.5</td><td>Data loading and manipulation</td></tr>
+          <tr><td>openpyxl</td><td>≥ 3.0</td><td>XLSX file reading</td></tr>
+          <tr><td>matplotlib</td><td>≥ 3.6</td><td>Plotting and animation frames</td></tr>
+          <tr><td>seaborn</td><td>≥ 0.12</td><td>Statistical figure styling</td></tr>
+          <tr><td>scipy</td><td>≥ 1.9</td><td>Signal processing (smoothing, filtering)</td></tr>
+          <tr><td>ffmpeg-python</td><td>≥ 0.2</td><td>MP4 export for animations</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">NC-tALC Dataset · <a href="https://sites.google.com/site/danjuechen/" target="_blank">SHINE Lab, NCSU</a> · <a href="mailto:asharm63@ncsu.edu">asharm63@ncsu.edu</a></div>
+    <div class="footer-links">
+      <a href="https://github.com/samrbgray/LaneChanging" target="_blank">GitHub</a>
+      <a href="publications.html">Cite</a>
+      <a href="team.html">Team</a>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

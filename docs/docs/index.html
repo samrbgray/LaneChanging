@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NC-tALC Dataset</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">NC-tALC</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="experimental-setup.html">Setup</a></li>
+      <li><a href="dataset.html">Dataset</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="research-directions.html">Research</a></li>
+      <li><a href="code.html">Code</a></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="container">
+    <p class="hero-eyebrow">NCSU SHINE Lab · Open Dataset</p>
+    <h1>Transitional AV<br><span>Lane Changing Dataset</span></h1>
+    <p class="hero-sub">
+      High-resolution, naturalistic driving data capturing how Tesla FSD and ACC-equipped vehicles
+      perform lane changes in real mixed-traffic on a North Carolina collector road.
+    </p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">152</span>
+        <span class="stat-label">Controlled Trials</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">20 Hz</span>
+        <span class="stat-label">RTK-GPS Sampling</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">4</span>
+        <span class="stat-label">Instrumented Vehicles</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">2</span>
+        <span class="stat-label">AV Modes (FSD + ACC)</span>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="dataset.html">Explore the Data</a>
+      <a class="btn btn-outline" href="publications.html">Read the Paper</a>
+      <a class="btn btn-outline" href="experimental-setup.html">Experimental Setup</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── AV Capabilities ── -->
+<section>
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <div class="section-intro">
+          <p class="section-label">Context</p>
+          <h2>Autonomous Vehicles & the Road Ahead</h2>
+          <p>
+            Autonomous and semi-autonomous vehicles are entering the public roadway network faster
+            than our understanding of their behavior can keep up. Systems like Tesla Full Self-Driving
+            (FSD) and Adaptive Cruise Control (ACC) represent the forefront of consumer-available
+            partial automation — capable of controlling steering, acceleration, and braking under
+            certain conditions, yet still requiring human oversight.
+          </p>
+          <br>
+          <p>
+            As of 2024, approximately 5 million Tesla vehicles operate on roads globally, with roughly
+            500,000 equipped with FSD capability. These <strong>transitional autonomous vehicles
+            (tAVs)</strong> are not a future scenario — they are already a significant and growing
+            share of the everyday vehicle fleet, sharing lanes with human drivers who were never
+            trained to interact with them.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="card">
+          <h4>SAE Automation Levels</h4>
+          <br>
+          <div style="display:flex;flex-direction:column;gap:.75rem;">
+            <div style="display:flex;gap:1rem;align-items:center;">
+              <span class="tag">L0</span>
+              <span style="font-size:.9rem;color:#c5d3e8;">No automation — human controls all tasks</span>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:center;">
+              <span class="tag">L1</span>
+              <span style="font-size:.9rem;color:#c5d3e8;">Driver assistance — one function (e.g. ACC)</span>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:center;">
+              <span class="tag" style="background:rgba(0,229,160,.2);border-color:rgba(0,229,160,.5);">L2</span>
+              <span style="font-size:.9rem;color:#c5d3e8;"><strong style="color:#fff;">Partial automation</strong> — steering + acceleration (Tesla ACC/Autopilot)</span>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:center;">
+              <span class="tag" style="background:rgba(0,229,160,.2);border-color:rgba(0,229,160,.5);">L3</span>
+              <span style="font-size:.9rem;color:#c5d3e8;"><strong style="color:#fff;">Conditional automation</strong> — system drives; human must be ready (Tesla FSD)</span>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:center;">
+              <span class="tag">L4</span>
+              <span style="font-size:.9rem;color:#c5d3e8;">High automation — no human needed in defined scenarios</span>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:center;">
+              <span class="tag">L5</span>
+              <span style="font-size:.9rem;color:#c5d3e8;">Full automation — no human required under any conditions</span>
+            </div>
+          </div>
+          <br>
+          <p class="img-caption">tAVs in this dataset operate at Levels 2–3</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Research Challenges ── -->
+<section>
+  <div class="container">
+    <div class="section-intro">
+      <p class="section-label">The Problem</p>
+      <h2>Why Lane Changing is Hard to Study</h2>
+      <p>
+        Lane changing is among the most complex driving maneuvers in mixed traffic. It is a
+        multi-agent interaction requiring real-time gap acceptance, coordination with surrounding
+        vehicles, and split-second decision-making. When a tAV performs a lane change — or responds
+        to one — its behavior can differ meaningfully from a human driver, creating interaction
+        dynamics that are not yet well understood.
+      </p>
+    </div>
+    <div class="card-grid card-grid-3">
+      <div class="card">
+        <h4>Safety</h4>
+        <br>
+        <p style="font-size:.9rem;">
+          tAV lane-change decisions may create unexpected safety-critical situations for
+          surrounding human-driven vehicles, particularly during gap acceptance under tight spacing.
+        </p>
+      </div>
+      <div class="card">
+        <h4>Traffic Flow</h4>
+        <br>
+        <p style="font-size:.9rem;">
+          Differences in tAV deceleration profiles, gap preferences, and response times can
+          propagate upstream as stop-and-go waves, affecting throughput even at low market
+          penetration rates.
+        </p>
+      </div>
+      <div class="card">
+        <h4>Data Gap</h4>
+        <br>
+        <p style="font-size:.9rem;">
+          Existing lane-change datasets were collected before tAVs entered the market. Empirical,
+          naturalistic data with cm-level precision is needed to calibrate next-generation
+          behavioral models.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── About the Dataset ── -->
+<section>
+  <div class="container">
+    <div class="section-intro">
+      <p class="section-label">The Dataset</p>
+      <h2>What NC-tALC Provides</h2>
+    </div>
+    <div class="two-col">
+      <div>
+        <p>
+          The NC-tALC dataset provides <strong>152 controlled lane-changing trials</strong> — 72
+          LC experiments and 80 Responding experiments — collected on Sunset Lake Road in
+          Apex, North Carolina. Each trial captures a complete lane-change event from a
+          four-vehicle instrumented platoon operating in real mixed traffic.
+        </p>
+        <br>
+        <p>
+          Two experiment types are included: one in which a tAV acts as the <em>lane changer</em>,
+          and one in which tAVs act as <em>responding follower vehicles</em>. Both Tesla FSD
+          and ACC driving modes are represented across a range of downstream spacings and
+          desired vehicle gap configurations.
+        </p>
+        <br>
+        <div class="callout">
+          <p>
+            All trajectory data is captured at <strong>20 Hz</strong> with cm-level RTK-GPS accuracy.
+            Each trial also includes forward-facing video, CAN bus signals, and energy consumption data.
+          </p>
+        </div>
+      </div>
+      <div>
+        <ul class="check-list">
+          <li>RTK-GPS positional trajectories at 20 Hz (0.01 m accuracy)</li>
+          <li>Speed, heading, roll, and pitch at high frequency</li>
+          <li>Forward-facing video at 1920×1080 / 30 fps</li>
+          <li>CAN bus data via ScanMyTesla (FSD & ACC modes)</li>
+          <li>Energy consumption per trial</li>
+          <li>Pre-computed lane distance columns (lateral & longitudinal)</li>
+          <li>Vehicle type labels (LV, LCV, F1, F2) per row</li>
+          <li>Relative longitudinal distance from lane-change event</li>
+        </ul>
+        <br>
+        <div style="display:flex;gap:1rem;margin-top:1rem;">
+          <a class="btn btn-primary" href="dataset.html">Access Sample Data</a>
+          <a class="btn btn-outline" href="experimental-setup.html">See Setup Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      NC-tALC Dataset · <a href="https://sites.google.com/site/danjuechen/" target="_blank">SHINE Lab, NCSU</a>
+      · For dataset access: <a href="mailto:asharm63@ncsu.edu">asharm63@ncsu.edu</a>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/samrbgray/LaneChanging" target="_blank">GitHub</a>
+      <a href="publications.html">Cite</a>
+      <a href="team.html">Team</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experimental Setup · NC-tALC</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">NC-tALC</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="experimental-setup.html">Setup</a></li>
+      <li><a href="dataset.html">Dataset</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="research-directions.html">Research</a></li>
+      <li><a href="code.html">Code</a></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero" style="padding:5rem 0 3rem;">
+  <div class="container">
+    <p class="hero-eyebrow">Methodology</p>
+    <h1>Experimental Setup</h1>
+    <p class="hero-sub">
+      Site selection, vehicle instrumentation, experiment design, and data collection protocol
+      for the NC-tALC lane-changing study.
+    </p>
+  </div>
+</section>
+
+<!-- ── Study Objectives ── -->
+<section>
+  <div class="container">
+    <div class="section-intro">
+      <p class="section-label">Objectives</p>
+      <h2>Study Goals</h2>
+    </div>
+    <div class="card-grid card-grid-3">
+      <div class="card">
+        <h4>Behavioral Comparison</h4>
+        <br>
+        <p style="font-size:.9rem;">
+          Characterize and compare lane-changing behavior between tAV driving modes (FSD vs. ACC)
+          and human-driven baselines — including gap acceptance, lateral trajectory, and
+          time-to-complete.
+        </p>
+      </div>
+      <div class="card">
+        <h4>Safety Assessment</h4>
+        <br>
+        <p style="font-size:.9rem;">
+          Evaluate surrogate safety measures during LC events across a range of gap difficulties,
+          providing an empirical basis for tAV safety analysis in mixed-traffic conditions.
+        </p>
+      </div>
+      <div class="card">
+        <h4>Responding Behavior</h4>
+        <br>
+        <p style="font-size:.9rem;">
+          Measure how FSD- and ACC-equipped vehicles respond as the cut-in target when another
+          vehicle merges in front — capturing deceleration profiles, headway recovery, and
+          driving style effects.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Site ── -->
+<section>
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <div class="section-intro">
+          <p class="section-label">Location</p>
+          <h2>Sunset Lake Road, Apex, NC</h2>
+          <p>
+            Experiments were conducted on Sunset Lake Road in Apex, North Carolina — a four-lane
+            Major Collector Road with a posted speed limit of 45 mph and an AADT of approximately
+            14,000 vehicles per day (2023). The site features a dedicated right-turn lane and a
+            non-signalized intersection, providing a consistent, repeatable environment for
+            lane-change trials under naturalistic traffic conditions.
+          </p>
+          <br>
+          <p>
+            The northbound segment used for data collection spans <strong>173 m</strong>, offering
+            sufficient run-up distance for vehicles to reach steady-state speed before the
+            lane-change event is initiated.
+          </p>
+        </div>
+        <div class="card-grid card-grid-2" style="margin-top:1.5rem;">
+          <div class="card" style="padding:1.25rem;">
+            <h4 style="font-size:.7rem;">Speed Limit</h4>
+            <p style="font-size:1.5rem;font-family:var(--font-mono);color:var(--white);margin:0;">45 mph</p>
+          </div>
+          <div class="card" style="padding:1.25rem;">
+            <h4 style="font-size:.7rem;">AADT (2023)</h4>
+            <p style="font-size:1.5rem;font-family:var(--font-mono);color:var(--white);margin:0;">~14,000</p>
+          </div>
+          <div class="card" style="padding:1.25rem;">
+            <h4 style="font-size:.7rem;">NB Segment</h4>
+            <p style="font-size:1.5rem;font-family:var(--font-mono);color:var(--white);margin:0;">173 m</p>
+          </div>
+          <div class="card" style="padding:1.25rem;">
+            <h4 style="font-size:.7rem;">Road Type</h4>
+            <p style="font-size:1.1rem;font-family:var(--font-mono);color:var(--white);margin:0;">Major Collector</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="img-wrap">
+          <img src="assets/img/site-diagram.png" alt="Site description diagram for Sunset Lake Road, Apex NC" />
+        </div>
+        <p class="img-caption">Fig. 1 — Sunset Lake Road site layout showing the 173 m NB data collection segment</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Vehicles ── -->
+<section>
+  <div class="container">
+    <div class="section-intro">
+      <p class="section-label">Instrumentation</p>
+      <h2>Vehicle Fleet</h2>
+      <p>
+        Four vehicles were instrumented and operated as a coordinated platoon. Each vehicle
+        played a specific role in the experiment and was equipped with high-precision sensors
+        appropriate to that role.
+      </p>
+    </div>
+
+    <div class="img-wrap" style="margin-bottom:2rem;">
+      <img src="assets/img/vehicles.jpg" alt="The four instrumented vehicles: three Tesla Model Ys and one Lincoln MKZ" />
+    </div>
+    <p class="img-caption" style="margin-bottom:2.5rem;">Fig. 2 — The NC-tALC instrumented vehicle fleet: three Tesla Model Y vehicles and one Lincoln MKZ Hybrid</p>
+
+    <div class="card-grid card-grid-2">
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+          <h3>LV — Lead Vehicle</h3>
+          <span class="tag">Lincoln MKZ</span>
+        </div>
+        <p style="font-size:.9rem;">2018 Lincoln MKZ Hybrid. Travels in the target lane ahead of the platoon, maintaining
+        a constant cruise speed of 40 mph to establish a stable leading gap.</p>
+        <br>
+        <ul class="check-list">
+          <li>NovAtel Dual Antenna RTK-GPS</li>
+          <li>Operated with standard ACC at 40 mph</li>
+          <li>Sets the downstream spacing variable (DS)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+          <h3>LCV — Lane Changer</h3>
+          <span class="tag">Tesla Model Y</span>
+        </div>
+        <p style="font-size:.9rem;">2023 Tesla Model Y. The subject vehicle that initiates the lane change in LC
+        experiments, or leads the platoon as a cut-in target in Responding experiments.</p>
+        <br>
+        <ul class="check-list">
+          <li>Inertial Lab INS-DM + RTK (0.01 m horizontal)</li>
+          <li>4 cameras (windshield + surround)</li>
+          <li>CAN bus logging via ScanMyTesla</li>
+          <li>Operated in FSD or ACC mode</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+          <h3>F1 — Target Follower 1</h3>
+          <span class="tag">Tesla Model Y</span>
+        </div>
+        <p style="font-size:.9rem;">2023 Tesla Model Y. Follows immediately behind the gap the LCV targets. In
+        Responding experiments, F1 is the primary responding vehicle receiving the cut-in.</p>
+        <br>
+        <ul class="check-list">
+          <li>Inertial Lab INS-DU + RTK</li>
+          <li>CAN bus logging via ScanMyTesla</li>
+          <li>Operated in FSD or ACC (per configuration)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+          <h3>F2 — Target Follower 2</h3>
+          <span class="tag">Tesla Model Y</span>
+        </div>
+        <p style="font-size:.9rem;">2023 Tesla Model Y. Second responding follower, positioned behind F1. Captures
+        secondary response and platoon-level disturbance propagation.</p>
+        <br>
+        <ul class="check-list">
+          <li>Inertial Lab INS-DU + RTK</li>
+          <li>CAN bus logging via ScanMyTesla</li>
+          <li>Operated in FSD or ACC (per configuration)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Experiment Design ── -->
+<section>
+  <div class="container">
+    <div class="section-intro">
+      <p class="section-label">Protocol</p>
+      <h2>Experiment Design</h2>
+    </div>
+
+    <div style="display:grid;gap:2rem;">
+
+      <!-- LC Experiment -->
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem;flex-wrap:wrap;gap:.75rem;">
+          <h3>LC Experiment — tAV as Lane Changer</h3>
+          <span class="tag-amber tag">72 Trials</span>
+        </div>
+        <p style="font-size:.9rem;margin-bottom:1.5rem;">
+          The LCV drives in the Subject Lane and merges into the Target Lane in front of F1, which
+          follows in the same lane. The LV sets a fixed speed in the Target Lane, establishing the
+          downstream spacing. The LCV is operated in FSD mode; the LV travels at cruise; F1 and
+          F2 follow in ACC at 40 mph.
+        </p>
+        <h4>Independent Variables</h4>
+        <br>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Variable</th>
+                <th>Levels</th>
+                <th>Values</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Downstream Spacing (DS)</td><td>4</td><td>0, 1, 2, 3</td><td>Gap to LV at lane-change initiation (relative units)</td></tr>
+              <tr><td>Desired Vehicle Spacing (DV)</td><td>3</td><td>0, 1, 2</td><td>LCV's desired gap to F1 after merging</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Responding Experiment -->
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem;flex-wrap:wrap;gap:.75rem;">
+          <h3>Responding Experiment — tAV as Responder</h3>
+          <span class="tag-amber tag">80 Trials</span>
+        </div>
+        <p style="font-size:.9rem;margin-bottom:1.5rem;">
+          An external vehicle (LCV) cuts in front of F1, which is now the responding tAV. Both
+          F1 and F2 are operated in either FSD or ACC. The driving style configuration of F1/F2
+          is varied between "Hurry" (H) and "Chill" (C) mode in Tesla settings, producing four
+          combinations tested across multiple downstream spacings.
+        </p>
+        <h4>Configuration Matrix</h4>
+        <br>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Config</th>
+                <th>F1 Style</th>
+                <th>F2 Style</th>
+                <th>DS Levels</th>
+                <th>Trials</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>HH</td><td>Hurry</td><td>Hurry</td><td>0, 1, 2, 3</td><td>20</td></tr>
+              <tr><td>HC</td><td>Hurry</td><td>Chill</td><td>0, 1, 2, 3</td><td>20</td></tr>
+              <tr><td>CH</td><td>Chill</td><td>Hurry</td><td>0, 1, 2, 3</td><td>20</td></tr>
+              <tr><td>CC</td><td>Chill</td><td>Chill</td><td>0, 1, 2, 3</td><td>20</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Data Types ── -->
+<section>
+  <div class="container">
+    <div class="section-intro">
+      <p class="section-label">Data</p>
+      <h2>Data Collected Per Trial</h2>
+    </div>
+    <div class="table-wrap card">
+      <table>
+        <thead>
+          <tr>
+            <th>Data Type</th>
+            <th>Sensor</th>
+            <th>Accuracy</th>
+            <th>Frequency</th>
+            <th>Vehicles</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Horizontal Position</td><td>INS + RTK-GPS</td><td>0.01 m</td><td>20 Hz</td><td>LCV, F1, F2</td></tr>
+          <tr><td>Speed</td><td>INS + RTK-GPS</td><td>0.01–0.05 m/s</td><td>20 Hz</td><td>LCV, F1, F2</td></tr>
+          <tr><td>Heading</td><td>INS + RTK-GPS</td><td>0.05–0.1°</td><td>20 Hz</td><td>LCV, F1, F2</td></tr>
+          <tr><td>Roll / Pitch</td><td>INS + RTK-GPS</td><td>0.02–0.05°</td><td>20 Hz</td><td>LCV, F1, F2</td></tr>
+          <tr><td>Altitude</td><td>INS + RTK-GPS</td><td>0.02 m</td><td>20 Hz</td><td>LCV, F1, F2</td></tr>
+          <tr><td>Forward Video</td><td>Sony ZV-1F</td><td>1920×1080, 84° FOV</td><td>30 fps</td><td>LCV</td></tr>
+          <tr><td>CAN Bus / Energy</td><td>ScanMyTesla</td><td>—</td><td>Variable</td><td>LCV, F1, F2</td></tr>
+          <tr><td>LV Position</td><td>NovAtel Dual RTK</td><td>0.01 m</td><td>20 Hz</td><td>LV</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <br>
+    <div class="callout">
+      <p>
+        All positional data is post-processed to a common time reference. Lane boundary coordinates
+        and pre-computed lateral/longitudinal distance columns are included in the released CSV files.
+        See the <a href="dataset.html">Dataset page</a> for full column definitions.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      NC-tALC Dataset · <a href="https://sites.google.com/site/danjuechen/" target="_blank">SHINE Lab, NCSU</a>
+      · For dataset access: <a href="mailto:asharm63@ncsu.edu">asharm63@ncsu.edu</a>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/samrbgray/LaneChanging" target="_blank">GitHub</a>
+      <a href="publications.html">Cite</a>
+      <a href="team.html">Team</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

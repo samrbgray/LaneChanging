@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dataset · NC-tALC</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">NC-tALC</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="experimental-setup.html">Setup</a></li>
+      <li><a href="dataset.html">Dataset</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="research-directions.html">Research</a></li>
+      <li><a href="code.html">Code</a></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero" style="padding:5rem 0 3rem;">
+  <div class="container">
+    <p class="hero-eyebrow">Open Data</p>
+    <h1>Dataset</h1>
+    <p class="hero-sub">
+      Sample files are freely available below. For access to the complete 152-trial dataset
+      including all video and energy consumption data, submit a request.
+    </p>
+  </div>
+</section>
+
+<!-- Dataset Overview -->
+<section>
+  <div class="container">
+    <div class="section-intro">
+      <p class="section-label">Structure</p>
+      <h2>What's Included</h2>
+    </div>
+    <div class="card-grid card-grid-3">
+      <div class="card">
+        <h4>Positional Dataset</h4><br>
+        <p style="font-size:.9rem;">High-frequency RTK-GPS trajectory files (XLSX) for each trial. Includes pre-processed lane distances, vehicle role labels, and a common longitudinal reference. Available for both ACC and FSD driving modes.</p>
+        <br><span class="tag">ACC</span>&nbsp;<span class="tag">FSD</span>&nbsp;<span class="tag">20 Hz</span>
+      </div>
+      <div class="card">
+        <h4>Video Dataset</h4><br>
+        <p style="font-size:.9rem;">Forward-facing camera footage from the LCV for each trial. Recorded at 1920×1080, 30 fps, 84° FOV. Synchronized with GPS timestamps.</p>
+        <br><span class="tag">MP4</span>&nbsp;<span class="tag">30 fps</span>&nbsp;<span class="tag">1080p</span>
+      </div>
+      <div class="card">
+        <h4>Energy Dataset</h4><br>
+        <p style="font-size:.9rem;">CAN bus energy consumption data logged via ScanMyTesla for each trial. Enables analysis of how lane-change aggressiveness affects EV energy use.</p>
+        <br><span class="tag">CAN Bus</span>&nbsp;<span class="tag">Tesla</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sample Downloads -->
+<section>
+  <div class="container">
+    <div class="section-intro">
+      <p class="section-label">Sample Files</p>
+      <h2>Download Sample Trials</h2>
+      <p>Two representative trials are freely available — one from each driving mode.</p>
+    </div>
+    <div class="card-grid card-grid-2">
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem;">
+          <h3>FSD Sample Trial</h3>
+          <span class="tag">S78 · DS2 · DV0</span>
+        </div>
+        <p style="font-size:.9rem;margin-bottom:1.25rem;">Lane-change experiment with the tAV operating in Full Self-Driving mode. Downstream spacing level 2, desired vehicle spacing level 0. Collected 2025-06-04.</p>
+        <div style="font-size:.78rem;color:var(--muted);margin-bottom:1.25rem;font-family:var(--font-mono);">Session 78 · LC Experiment · FSD Mode</div>
+        <a class="btn btn-primary" href="https://github.com/samrbgray/LaneChanging/raw/main/Data/Sample/FSD/LC/S78_DS2_DV0.xlsx" download>↓ Download XLSX</a>
+      </div>
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem;">
+          <h3>ACC Sample Trial</h3>
+          <span class="tag">S72 · DS0 · DV1</span>
+        </div>
+        <p style="font-size:.9rem;margin-bottom:1.25rem;">Lane-change experiment with the tAV operating in Adaptive Cruise Control mode. Downstream spacing level 0, desired vehicle spacing level 1. Collected 2025-05-28.</p>
+        <div style="font-size:.78rem;color:var(--muted);margin-bottom:1.25rem;font-family:var(--font-mono);">Session 72 · LC Experiment · ACC Mode</div>
+        <a class="btn btn-primary" href="https://github.com/samrbgray/LaneChanging/raw/main/Data/Sample/ACC/LC/S72_DS0_DV1.xlsx" download>↓ Download XLSX</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Data Preview -->
+<section>
+  <div class="container">
+    <div class="section-intro">
+      <p class="section-label">Preview</p>
+      <h2>Data Structure</h2>
+      <p>First three rows of the FSD sample (S78_DS2_DV0). All positional files share this schema.</p>
+    </div>
+    <div class="data-preview-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>GPS_TOW</th><th>Raw_Timestamp</th><th>DateTime_EST</th>
+            <th>Latitude</th><th>Longitude</th><th>Altitude</th><th>Heading</th>
+            <th>Speed_mps</th><th>LatDist_LeftLane_m</th><th>LatDist_RightLane_m</th>
+            <th>LongDist_LeftLane_m</th><th>LaneSpacing_m</th>
+            <th>VehicleType</th><th>Rel_LongDist_from_LC</th><th>LongDist_LeftLane_m (Common Ref)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>333614.00</td><td>0.00</td><td>2025-06-04 16:39:56</td>
+            <td>35.676782</td><td>-78.805560</td><td>101.678</td><td>162.194</td>
+            <td>15.535</td><td>0.0712</td><td>-0.1648</td>
+            <td>0.000</td><td>-0.2206</td><td>F1</td><td>-59.400</td><td>455.400</td>
+          </tr>
+          <tr>
+            <td>333614.05</td><td>0.05</td><td>2025-06-04 16:39:56</td>
+            <td>35.676776</td><td>-78.805557</td><td>101.671</td><td>162.191</td>
+            <td>15.535</td><td>0.0712</td><td>-0.1648</td>
+            <td>0.800</td><td>-0.2206</td><td>F1</td><td>-58.600</td><td>456.200</td>
+          </tr>
+          <tr>
+            <td>333614.10</td><td>0.10</td><td>2025-06-04 16:39:56</td>
+            <td>35.676769</td><td>-78.805554</td><td>101.662</td><td>162.184</td>
+            <td>15.734</td><td>0.0729</td><td>-0.1588</td>
+            <td>1.500</td><td>-0.2254</td><td>F1</td><td>-57.900</td><td>456.900</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Column Definitions -->
+<section>
+  <div class="container">
+    <div class="section-intro">
+      <p class="section-label">Schema</p>
+      <h2>Column Definitions</h2>
+    </div>
+    <div class="table-wrap card">
+      <table>
+        <thead><tr><th>Column</th><th>Units</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>GPS_TOW</td><td>seconds</td><td>GPS Time of Week — absolute time reference for cross-vehicle synchronization</td></tr>
+          <tr><td>Raw_Timestamp</td><td>seconds</td><td>Elapsed time from trial start (t = 0 at first record)</td></tr>
+          <tr><td>DateTime_EST</td><td>—</td><td>Wall-clock datetime in Eastern Standard Time</td></tr>
+          <tr><td>Latitude</td><td>decimal degrees</td><td>WGS-84 latitude (RTK-corrected, ±0.01 m)</td></tr>
+          <tr><td>Longitude</td><td>decimal degrees</td><td>WGS-84 longitude (RTK-corrected, ±0.01 m)</td></tr>
+          <tr><td>Altitude</td><td>meters</td><td>Ellipsoidal altitude above WGS-84 reference</td></tr>
+          <tr><td>Heading</td><td>degrees</td><td>Vehicle heading from North (0–360°)</td></tr>
+          <tr><td>Speed_mps</td><td>m/s</td><td>Ground speed from INS/RTK fusion</td></tr>
+          <tr><td>LeftLane_Lat / _Lon</td><td>decimal degrees</td><td>Projected left lane boundary coordinate at this timestep</td></tr>
+          <tr><td>RightLane_Lat / _Lon</td><td>decimal degrees</td><td>Projected right lane boundary coordinate at this timestep</td></tr>
+          <tr><td>LongDist_LeftLane_m</td><td>meters</td><td>Longitudinal distance traveled along the left lane centerline from trial start</td></tr>
+          <tr><td>LatDist_LeftLane_m</td><td>meters</td><td>Lateral offset from left lane marking (+ toward left, – away)</td></tr>
+          <tr><td>LatDist_RightLane_m</td><td>meters</td><td>Lateral offset from right lane marking</td></tr>
+          <tr><td>LaneSpacing_m</td><td>meters</td><td>Estimated lane width at this position</td></tr>
+          <tr><td>VehicleType</td><td>—</td><td>Role label: LV, LCV, F1, or F2</td></tr>
+          <tr><td>Rel_Longitudinal_Dist_from_LC</td><td>meters</td><td>Signed distance from the lane-change event (– = before, + = after)</td></tr>
+          <tr><td>LongDist_LeftLane_m (Common Reference)</td><td>meters</td><td>Longitudinal position in a shared reference frame across all vehicles in the trial</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Full Dataset Request -->
+<section>
+  <div class="container">
+    <div class="card" style="text-align:center;padding:3.5rem 2rem;">
+      <p class="section-label">Full Dataset</p>
+      <h2 style="margin-bottom:1rem;">Request Access to All 152 Trials</h2>
+      <p style="max-width:55ch;margin:0 auto 2rem;">
+        The complete NC-tALC dataset — all positional trials, synchronized video, and energy
+        consumption data — is available to researchers upon request. Please include a brief
+        description of your intended use.
+      </p>
+      <a class="btn btn-primary" href="mailto:asharm63@ncsu.edu?subject=NC-tALC Dataset Access Request">
+        Request Full Dataset
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">NC-tALC Dataset · <a href="https://sites.google.com/site/danjuechen/" target="_blank">SHINE Lab, NCSU</a> · <a href="mailto:asharm63@ncsu.edu">asharm63@ncsu.edu</a></div>
+    <div class="footer-links">
+      <a href="https://github.com/samrbgray/LaneChanging" target="_blank">GitHub</a>
+      <a href="publications.html">Cite</a>
+      <a href="team.html">Team</a>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
