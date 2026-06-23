@@ -1,2 +1,4 @@
-theme: al-folio
-title: Lane Changing Dataset
+title: NC-tALC Dataset
+description: NCSU Transitional Autonomous Vehicle Lane Changing Dataset
+url: "https://samrbgray.github.io"
+baseurl: "/LaneChanging/docs"
